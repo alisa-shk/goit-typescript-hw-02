@@ -1,0 +1,28 @@
+.searchbar {
+    background-color: rgba(42, 32, 235, 0.868);
+    padding: 20px;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.input {
+    font-size: 14px;
+    width: 360px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.btn {
+    height: 40px;
+    width: 80px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+}

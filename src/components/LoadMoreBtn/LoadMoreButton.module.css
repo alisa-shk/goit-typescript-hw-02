@@ -1,0 +1,10 @@
+.btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgb(144, 65, 218);
+    color: aliceblue;
+    margin-top: 16px;
+    padding: 16px;
+}
