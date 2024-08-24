@@ -1,23 +1,24 @@
 import { useState } from 'react';
 
-import { fetchImages } from "./searchImages-api";
-import ImageGallery from './ImageGallery/ImageGallery';
-import SearchBar from "./SearchBar/SearchBar";
-import ErrorMessage from "./ErrorMessage/ErrorMessage";
-import Loader from './Loader/Loader';
-import LoadMoreBtn from './LoadMoreBtn/LoadMoreBtn';
-import ImageModal from './ImageModal/ImageModal';
+import { fetchImages } from "../searchImages-api";
+import ImageGallery from '../ImageGallery/ImageGallery';
+import SearchBar from "../SearchBar/SearchBar";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import Loader from '../Loader/Loader';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
+import ImageModal from '../ImageModal/ImageModal';
+import { Image } from '../searchImages-api';
 
 const App = () => {
-  const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [images, setImages] = useState<Image[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [query, setQuery] = useState<string>("");
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
 
-  const handleSearch = async (query) => {
+  const handleSearch = async (query: string) => {
     setPage(1);
     setQuery(query);
     try {
@@ -47,12 +48,13 @@ const App = () => {
     }
   };
 
-  const openModal = (image) => {
+  const openModal = (image: Image) => {
     setSelectedImage(image);
     setModalIsOpen(true);
   }
 
   const closeModal = () => {
+    setSelectedImage(null);
     setModalIsOpen(false);
   };
 

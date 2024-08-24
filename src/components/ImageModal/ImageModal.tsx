@@ -1,7 +1,15 @@
 import ReactModal from "react-modal";
 import s from "./ImageModal.module.css";
+import { Image } from "../searchImages-api";
 
-const ImageModal = ({ isOpen, onRequestClose, image }) => {
+
+type ImageModalProps = {
+    isOpen: boolean;
+    onRequestClose: () => void;
+    image: Image | null;
+};
+
+const ImageModal = ({ isOpen, onRequestClose, image }: ImageModalProps) => {
     if (!isOpen) return null;
     return (
         <ReactModal

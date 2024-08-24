@@ -1,6 +1,12 @@
+import { Image } from "../searchImages-api";
 import s from "./ImageCard.module.css";
 
-const ImageCard = ({ image, onImageClick }) => {
+type ImageCardProps = {
+    image: Image;
+    onImageClick: (image: Image) => void;
+};
+
+const ImageCard = ({ image, onImageClick }: ImageCardProps) => {
     return (
         <div>
             <img
